@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y wget
 
 # 下载 GitHub Releases 里的 JAR
-RUN wget -O app.jar "https://github.com/mayintao/mbtsserver/releases/download/20250227-2/app-0.0.1-SNAPSHOT.jar"
+RUN wget -O app.jar "https://github.com/mayintao/mbtsserver/releases/download/20250227-3/app-0.0.1-SNAPSHOT.jar"
 
 # 让 Docker 监听 10000 端口
 EXPOSE 10000
