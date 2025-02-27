@@ -1,5 +1,14 @@
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY app-0.0.1-SNAPSHOT.jar app.jar
+
+# 安装 wget
+RUN apt-get update && apt-get install -y wget
+
+# 下载 GitHub Releases 里的 JAR
+RUN wget -O app.jar "https://github.com/mayintao/mbtsserver/releases/download/20250227/app-0.0.1-SNAPSHOT.jar.jar"
+
+# 让 Docker 监听 10000 端口
 EXPOSE 10000
+
+# 运行 JAR
 CMD ["java", "-jar", "app.jar"]
