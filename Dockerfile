@@ -15,7 +15,7 @@ ENV TESSDATA_PREFIX="/usr/share/tesseract-ocr/4.00/tessdata/"
 RUN wget -O ${TESSDATA_PREFIX}/chi_sim.traineddata "https://github.com/tesseract-ocr/tessdata_best/raw/main/chi_sim.traineddata"
 
 # 4️⃣ 下载你的 JAR 文件
-RUN wget -O app.jar "https://github.com/mayintao/mbtsserver/releases/download/mbts-0315-1/app-0.0.1-SNAPSHOT.jar"
+RUN wget -O app.jar "https://github.com/mayintao/mbtsserver/releases/download/mbts-0315-2/app-0.0.1-SNAPSHOT.jar"
 
 # 5️⃣ 监听 10000 端口
 EXPOSE 10000
