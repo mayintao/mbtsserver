@@ -21,5 +21,5 @@ RUN wget -O app.jar "https://github.com/mayintao/mbtsserver/releases/download/mb
 EXPOSE 10000
 
 # 6️⃣ 运行 JAR
-CMD ["java", "-Xms512m", "-Xmx1024m", "-XX:+PrintGCDetails", "-jar", "app.jar"]
+CMD ["java", "-Xms512m", "-Xmx512m", "-Xlog:gc*", "-jar", "app.jar"]
 
