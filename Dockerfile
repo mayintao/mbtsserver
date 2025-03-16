@@ -22,7 +22,7 @@ RUN wget -q -O ${TESSDATA_PREFIX}/chi_sim.traineddata \
     "https://github.com/tesseract-ocr/tessdata_best/raw/main/chi_sim_vert.traineddata"
 
 # 6️⃣ 下载 JAR 文件（可选：用 `ADD` 让 Docker 缓存）
-ADD https://github.com/mayintao/mbtsserver/releases/download/mbts-0316-1/app-0.0.1-SNAPSHOT.jar
+ADD "https://github.com/mayintao/mbtsserver/releases/download/mbts-0316-1/app-0.0.1-SNAPSHOT.jar"
 # 7️⃣ 监听 10000 端口
 EXPOSE 10000
 
