@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*  # 清理无用缓存，减小镜像体积
 
+RUN apt-get update && apt-get install -y postgresql-client
+
 # 4️⃣ 设置 OCR 语言包目录
 ENV TESSDATA_PREFIX="/usr/share/tesseract-ocr/4.00/tessdata/"
 
