@@ -31,7 +31,7 @@ RUN wget -q -O ${TESSDATA_PREFIX}/chi_sim.traineddata \
 
 # 6️⃣ 下载 JAR 文件
 RUN wget -q -O app.jar \
-    "https://github.com/mayintao/mbtsserver/releases/download/mbts-1117-1/app-0.0.1-SNAPSHOT.jar"
+    "https://github.com/mayintao/mbtsserver/releases/download/mbts-1118-1/app-0.0.1-SNAPSHOT.jar"
 
 # 7️⃣ 监听 10000 端口
 EXPOSE 10000
