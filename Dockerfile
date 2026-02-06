@@ -29,6 +29,14 @@ RUN wget -q -O ${TESSDATA_PREFIX}/chi_sim.traineddata \
     && wget -q -O ${TESSDATA_PREFIX}/chi_sim_vert.traineddata \
     "https://github.com/tesseract-ocr/tessdata_best/raw/main/chi_sim_vert.traineddata"
 
+# 安装 LibreOffice 和字体 for word-pdf
+RUN apt-get update && \
+    apt-get install -y libreoffice \
+    libreoffice-java-common \
+    fonts-dejavu \
+    fonts-liberation \
+    && apt-get clean
+
 # 6️⃣ 下载 JAR 文件
 RUN wget -q -O app.jar \
     "https://github.com/mayintao/mbtsserver/releases/download/mbts-0126-5/app-0.0.1-SNAPSHOT.jar"
