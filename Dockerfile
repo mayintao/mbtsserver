@@ -29,15 +29,6 @@ RUN wget -q -O ${TESSDATA_PREFIX}/chi_sim.traineddata \
     && wget -q -O ${TESSDATA_PREFIX}/chi_sim_vert.traineddata \
     "https://github.com/tesseract-ocr/tessdata_best/raw/main/chi_sim_vert.traineddata"
 
-# 安装字体依赖和工具
-RUN apk add --no-cache ttf-dejavu fontconfig curl unzip
-# 创建中文字体目录
-RUN mkdir -p /usr/share/fonts/chinese
-# 下载 SimSun.ttf 并放到字体目录
-RUN curl -L -o /usr/share/fonts/chinese/SimSun.ttf https://www.dafontfree.net/download-simsun-regular/f143011.htm
-# 刷新字体缓存
-RUN fc-cache -fv
-
 # 6️⃣ 下载 JAR 文件
 RUN wget -q -O app.jar \
     "https://github.com/mayintao/mbtsserver/releases/download/mbts-0126-9/app-0.0.1-SNAPSHOT.jar"
