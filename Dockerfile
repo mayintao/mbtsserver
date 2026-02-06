@@ -29,6 +29,12 @@ RUN wget -q -O ${TESSDATA_PREFIX}/chi_sim.traineddata \
     && wget -q -O ${TESSDATA_PREFIX}/chi_sim_vert.traineddata \
     "https://github.com/tesseract-ocr/tessdata_best/raw/main/chi_sim_vert.traineddata"
 
+# 2️⃣ 安装 LibreOffice 和必要工具
+RUN apt-get update && \
+    apt-get install -y libreoffice wget unzip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 # 6️⃣ 下载 JAR 文件
 RUN wget -q -O app.jar \
     "https://github.com/mayintao/mbtsserver/releases/download/mbts-0126-9/app-0.0.1-SNAPSHOT.jar"
